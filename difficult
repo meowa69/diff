@@ -1,0 +1,60 @@
+package prac;
+import java.util.*;
+public class difficult {
+
+    public static void main(String[] args){
+
+        Double wage;
+        Double hour;
+        Double totalTax =(double) 0;
+        Double totalNet = (double) 0;
+        Double totalInsurance = (double) 0;
+        int numEmployee = 0;
+        int insurance = 50;
+        
+        for(int x=0;x<1;){
+            x++;
+        Scanner p = new Scanner(System.in);
+        x=0;
+        
+        System.out.println("\nWELCOME TO ABC's PAYROLL SYSTEM");
+        System.out.print("Enter Employee's Name: ");
+        String name = p.nextLine();
+        if(name.equalsIgnoreCase("Done")){
+            x=1;
+           
+                System.out.println("\nTotal number of Employees: "+ numEmployee);
+                System.out.println("Total Net: "+ totalNet);
+                System.out.println("Total Tax: "+ totalTax);
+                System.out.println("Total Insurance: "+ totalInsurance);
+                break;
+               
+            }
+        System.out.print("Enter Employee's Hourly Wage: ");
+        wage = p.nextDouble();
+        System.out.print("Enter Employee's Hourly Work for this Week: ");
+        hour = p.nextDouble();
+
+        System.out.println("\nEmployee's Payslip for July 24-26, 2017.");
+        System.out.println("Employee's Name: "+ name);
+        System.out.println("Hourly Rate: "+ wage);
+        System.out.println("Total Hours Worked: "+ hour);
+
+        Double gross = wage*hour;
+        Double tax = gross * 0.12;
+        Double netG = gross - tax - insurance;
+        totalTax = totalTax + tax;
+        totalNet = totalNet + netG;
+        totalInsurance = totalInsurance + insurance;
+        numEmployee = numEmployee + 1;
+
+        System.out.println("Gross: "+ gross);
+        System.out.println("Net Gross: "+ String.format("%.2f", netG));
+        System.out.println("12% Tax: "+ tax);
+        System.out.println("Insurance: "+ insurance);
+        x=0;
+        
+        }
+    
+    }
+}
